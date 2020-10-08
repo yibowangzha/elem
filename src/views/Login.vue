@@ -85,7 +85,7 @@ export default {
     },
     // 获取验证码
     async ajaxCodeFn() {
-      let { data: res } = await axios.post("/v1/captchas");
+      let { data: res } = await axios.post("http://elm.cangdu.org/v1/captchas");
       // console.log(res)
       this.cap = res.code;
     },
@@ -100,7 +100,7 @@ export default {
       //     captcha_code:this.captcha_code
       // })
 
-      let { data: res } = await axios.post("/v2/login", {
+      let { data: res } = await axios.post("http://elm.cangdu.org/v2/login", {
         username: this.username,
         password: this.password,
         captcha_code: this.captcha_code
